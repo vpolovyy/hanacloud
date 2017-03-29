@@ -1,0 +1,69 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="iotClient.controller.View1">
+	<App>
+		<pages>
+			<Page title="Dashboard">
+				<content>
+					<VBox direction="Column" id="vbox0" justifyContent="Center" width="100%">
+						<items>
+							<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+								layout="ResponsiveGridLayout" id="__form0">
+								<sap.ui.layout.form:content>
+									<sap.ui.core:Title text="Title" id="__title0"/>
+									<Label text="Vor und Nachname" id="__label0"/>
+									<Input width="100%" value="{neuerAntrag>/vorname}"/>
+									<Input width="100%" value="{neuerAntrag>/nachname}"/>
+									<Label text="Team"/>
+									<Input width="100%" id="__input2" value="{neuerAntrag>/team}"/>
+								</sap.ui.layout.form:content>
+								<sap.ui.layout.form:customData>
+									<sap.ui.core:CustomData key="w5g.dt.editable" value="false" id="__data7"/>
+								</sap.ui.layout.form:customData>
+							</sap.ui.layout.form:SimpleForm>
+							<Button text="Button" width="100px" id="__button0" press="createRecord"/>
+						</items>
+					</VBox>
+					<Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{/T_IOT_F1B3F3605C715639D435}">
+						<items>
+							<ColumnListItem id="__item0">
+								<cells>
+									<Text text="{G_DEVICE}"/>
+									<Text text="{ path:'G_CREATED', type:'sap.ui.model.type.Date', formatOptions:{pattern:'dd.MM.yyyy HH:mm:ss'}}"/>
+									<!--<Text text="{path:'C_TIMESTAMP', type:'sap.ui.model.type.Date', formatOptions:{pattern:'dd.MM.yyyy HH:mm:ss'}}"/>-->
+									<Text text="{C_STAERKE}"/>
+									<Text text="{C_AUTO}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+						<columns>
+							<Column >
+								<header>
+									<Label text="device ID"/>
+								</header>
+							</Column>
+							<Column >
+								<header>
+									<Label text="datum"/>
+								</header>
+							</Column>
+							<!--<Column >-->
+							<!--	<header>-->
+							<!--		<Label text="zeit"/>-->
+							<!--	</header>-->
+							<!--</Column>-->
+							<Column >
+								<header>
+									<Label text="impact"/>
+								</header>
+							</Column>
+							<Column >
+								<header>
+									<Label text="auto"/>
+								</header>
+							</Column>
+						</columns>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
